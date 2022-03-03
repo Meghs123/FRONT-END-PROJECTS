@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "Q1.css">
+    <script>
+        function Total(){
+            var sub1 = parseInt(document.getElementById("eng").value);
+            var sub2 = parseInt(document.getElementById("mat").value);
+            var sub3 = parseInt(document.getElementById("phy").value);
+            var sub4 = parseInt(document.getElementById("com").value);
+            var sub5 = parseInt(document.getElementById("sci").value);
+
+            if(sub1>100 || sub2>100 || sub3>100 || sub4>100 || sub5>100){
+                alert("Please enter marks in range of 100");
+            }
+            else{
+                var sum = sub1 + sub2 + sub3 + sub4 + sub5;
+                document.getElementById("total").innerHTML = "English marks  :"+ sub2+ "<br>Mathematics marks  :"+sub3+
+                "<br> Computer marks  :"+sub4+ "<br> Science marks  :"+sub5+ "<br> Urdu marks  :" + sub1+"<br>___________<br>Total marks :"+sum;
+
+
+            }
+        }
+        function Average(){
+            var sub1 = parseInt(document.getElementById("eng").value);
+            var sub2 = parseInt(document.getElementById("mat").value);
+            var sub3 = parseInt(document.getElementById("phy").value);
+            var sub4 = parseInt(document.getElementById("com").value);
+            var sub5 = parseInt(document.getElementById("sci").value);
+             
+            if(sub1>100 || sub2>100 || sub3>100 || sub4>100 || sub5>100){
+                alert("Please enter marks in range of 100");
+            }
+            else{
+                var sum = sub1 + sub2 + sub3 + sub4 + sub5;
+                var Avg = (sum/5);
+                document.getElementById("ave").innerHTML = "Your average marks is :" + Avg;
+            }
+        }
+        function grade(){
+            var sub1 = parseInt(document.getElementById("eng").value);
+            var sub2 = parseInt(document.getElementById("mat").value);
+            var sub3 = parseInt(document.getElementById("phy").value);
+            var sub4 = parseInt(document.getElementById("com").value);
+            var sub5 = parseInt(document.getElementById("sci").value);
+
+            if(sub1>100 || sub2>100 || sub3>100 || sub4>100 || sub5>100){
+                alert("Please enter marks in range of 100");
+            }
+            else{
+                var total = sub1 + sub2 + sub3 + sub4 + sub5;
+                var Avg = total/5;
+
+                if(Avg>=90 && Avg<=100) {
+                    document.getElementById("grade").innerHTML = "Your grade is A";
+                }
+                else if(Avg>=75 && Avg<=90) {
+                    document.getElementById("grade").innerHTML = "Your grade is B";
+                }
+                else if(Avg>=65 && Avg<=75) {
+                    document.getElementById("grade").innerHTML = "Your grade is C";
+                }
+                else if(Avg>=55 && Avg<=65) {
+                    document.getElementById("grade").innerHTML = "Your grade is D";
+                }
+                else if(Avg>=40 && Avg<=55) {
+                    document.getElementById("grade").innerHTML = "Your grade is E";
+                }
+                else{
+                    document.getElementById("grade").innerHTML = "You are fail in exam!";
+                }
+            }
+
+        }
+    </script>
+    
+</head>
+<body>
+    <div id = "main">
+        <div id = "head"><h1>Grading System</h1></div>
+
+        <label>English</label><input type = "text" id = "eng"><br>
+        <label>Maths</label><input type = "text" id = "mat"> <br>
+        <label>Physics</label><input type = "text" id = "phy"> <br>
+        <label>Computer</label><input type = "text" id = "com"> <br>
+        <label>Science</label><input type = "text" id = "sci"> <br>
+        <br>
+        <button class = "btn1" onclick = "Total()">Total</button>
+        <button class = "btn2" onclick = "Average()">Average</button>
+        <button class = "btn3" onclick = "grade()">Grade</button>
+        
+    </div>
+
+    <div id="result">
+        <div id = "head1"><h1>Total</h1></div>
+        <div id = "total">
+
+        </div>
+        <div id = "head2"><h1>Average</h1></div>
+        <div id = "ave">
+
+        </div>
+        <div id = "head3"><h1>Grade</h1></div>
+        <div id = "grade">
+
+        </div>
+    </div>
+</body>
+</html>
